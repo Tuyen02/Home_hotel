@@ -15,8 +15,8 @@ if (!defined('NV_MAINFILE')) {
 
 $db_config['dbhost'] = '127.0.0.1';
 $db_config['dbport'] = '';
-$db_config['dbname'] = 'homehotel';
-$db_config['dbsystem'] = 'homehotel';
+$db_config['dbname'] = 'homedb';
+$db_config['dbsystem'] = 'homedb';
 $db_config['dbuname'] = 'root';
 $db_config['dbpass'] = '';
 $db_config['dbtype'] = 'mysql';
@@ -28,7 +28,7 @@ $db_config['prefix'] = 'nv4';
 $global_config['site_domain'] = '';
 $global_config['name_show'] = 0;
 $global_config['idsite'] = 0;
-$global_config['sitekey'] = '98814e04b807789f18b875d9c46dc258';// Do not change sitekey!
+$global_config['sitekey'] = '5528c4769b9455279a31958cd70f07cc';// Do not change sitekey!
 $global_config['hashprefix'] = '{SSHA512}';
 $global_config['cached'] = 'files';
 $global_config['session_handler'] = 'files';

@@ -16,8 +16,8 @@ if (!defined('NV_MAINFILE')) {
 $db_config['dbhost'] = 'localhost';
 $db_config['dbtype'] = 'mysql';
 $db_config['dbport'] = '';
-$db_config['dbname'] = '';
-$db_config['dbuname'] = '';
+$db_config['dbname'] = 'homedb';
+$db_config['dbuname'] = 'root';
 $db_config['dbpass'] = '';
 $db_config['dbdetete'] = 0;
 $db_config['prefix'] = 'nv4';

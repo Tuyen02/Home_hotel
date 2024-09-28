@@ -1,0 +1,140 @@
+.slimmenu a.nav-link {
+    font-size: 20px;
+    /* Cỡ chữ đồng bộ */
+    font-weight: 500;
+}
+
+.slimmenu>li>ul {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.1rem;
+}
+
+.slimmenu a.nav-link:hover,
+.slimmenu a.nav-link.active {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+.h-font {
+    font-family: 'Merienda', cursive;
+}
+
+.slimmenu li.current a {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+.custom-btn-outline-dark {
+    color: #000;
+    /* Màu chữ ban đầu là đen */
+    background-color: #fff;
+    /* Nền trắng */
+    border-color: #000;
+    /* Đường viền đen */
+}
+
+.custom-btn-outline-dark:hover {
+    color: #fff;
+    /* Màu chữ chuyển thành trắng khi hover */
+    background-color: #000;
+    /* Nền đen khi hover */
+}
+
+* {
+    font-size: 20px;
+}
+
+#header {
+    height: 80px;
+    position: sticky;
+}
+
+#header .dangnhap {
+    margin-left: 150px;
+}
+
+.dangnhap a.button.user,
+.dangnhap a.button.user:hover {
+    margin-left: 80px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: transparent;
+    background-size: contain;
+}
+
+/* TIP POPUP and FTIP POPUP */
+#tip,
+#ftip {
+    position: absolute;
+    color: #333 !important;
+    background-color: #eee;
+    max-width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+}
+
+#tip {
+    top: 100%;
+    right: 0;
+    width: 500px !important;
+    min-height: 50px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#tip .bg,
+#ftip .bg {
+    padding: 15px;
+    border-bottom-color: #aaaaaa;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    font-size: 18px;
+}
+
+#tip .bg {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: fit-content;
+    /* Điều chỉnh để phù hợp với nội dung */
+}
+
+#tip .tip-footer,
+#ftip .tip-footer {
+    background-color: #e5e5e5;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    padding: 10px;
+}
+
+#tip .tip-footer {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 10px -15px -16px;
+}
+
+#tip h3,
+#ftip h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#tip ul {
+    margin: 0;
+    padding: 0;
+}
+
+#tip a {
+    color: #333;
+}
+
+#tip .socialList a {
+    color: #fff;
+}
+
+a.btn {
+    color: black;
+}

@@ -1,0 +1,52 @@
+[Tue, 24 Sep 2024 10:44:20 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "cancel_request"] [FILE: /modules/room/admin/booking_content.php] [LINE: 73] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Tue, 24 Sep 2024 11:10:58 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "pending"] [FILE: /modules/room/admin/booking_content.php] [LINE: 51] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Tue, 24 Sep 2024 14:21:11 +0700] [home.my] [127.0.0.1] [Warning(2): imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile] [FILE: /includes/core/statimg.php] [LINE: 27] [TRACE:]
+#1  LINE: 102   FILE: /index.php
+#2  LINE: 27    FILE: /includes/core/statimg.php
+
+[Tue, 24 Sep 2024 14:29:18 +0700] [home.my] [127.0.0.1] [Warning(2): file_get_contents(C:/xampp/htdocs/Home_hotel/themes/home/layout\header_extended_gioithieu.tpl): Failed to open stream: No such file or directory] [FILE: /includes/xtemplate.class.php] [LINE: 1333] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 182   FILE: /modules/page/funcs/main.php
+#3  LINE: 95    FILE: /themes/home/theme.php
+#4  LINE: 395   FILE: /includes/xtemplate.class.php
+#5  LINE: 506   FILE: /includes/xtemplate.class.php
+#6  LINE: 537   FILE: /includes/xtemplate.class.php
+#7  LINE: 1370  FILE: /includes/xtemplate.class.php
+#8  LINE: 1333  FILE: /includes/xtemplate.class.php
+
+[Tue, 24 Sep 2024 14:32:53 +0700] [home.my] [127.0.0.1] [Warning(2): foreach() argument must be of type array|object, null given] [FILE: /modules/room/theme.php] [LINE: 27] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 28    FILE: /modules/room/funcs/main.php
+
+[Tue, 24 Sep 2024 14:32:53 +0700] [home.my] [127.0.0.1] [Warning(2): foreach() argument must be of type array|object, null given] [FILE: /modules/room/theme.php] [LINE: 32] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 28    FILE: /modules/room/funcs/main.php
+
+[Tue, 24 Sep 2024 14:36:24 +0700] [home.my] [127.0.0.1] [Run-time notices(8192): explode(): Passing null to parameter #2 ($string) of type string is deprecated] [FILE: /themes/home/blocks/global.room.php] [LINE: 91] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 30    FILE: /modules/room/funcs/main.php
+#3  LINE: 378   FILE: /themes/home/theme.php
+#4  LINE: 178   FILE: /includes/core/user_functions.php
+#5  LINE: 132   FILE: /themes/home/blocks/global.room.php
+#6  LINE: 91    FILE: /themes/home/blocks/global.room.php
+
+[Tue, 24 Sep 2024 14:36:24 +0700] [home.my] [127.0.0.1] [Run-time notices(8192): explode(): Passing null to parameter #2 ($string) of type string is deprecated] [FILE: /themes/home/blocks/global.room.php] [LINE: 93] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 30    FILE: /modules/room/funcs/main.php
+#3  LINE: 378   FILE: /themes/home/theme.php
+#4  LINE: 178   FILE: /includes/core/user_functions.php
+#5  LINE: 132   FILE: /themes/home/blocks/global.room.php
+#6  LINE: 93    FILE: /themes/home/blocks/global.room.php
+
+[Tue, 24 Sep 2024 14:36:24 +0700] [home.my] [127.0.0.1] [Run-time notices(8192): explode(): Passing null to parameter #2 ($string) of type string is deprecated] [FILE: /themes/home/blocks/global.room.php] [LINE: 94] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 30    FILE: /modules/room/funcs/main.php
+#3  LINE: 378   FILE: /themes/home/theme.php
+#4  LINE: 178   FILE: /includes/core/user_functions.php
+#5  LINE: 132   FILE: /themes/home/blocks/global.room.php
+#6  LINE: 94    FILE: /themes/home/blocks/global.room.php
+

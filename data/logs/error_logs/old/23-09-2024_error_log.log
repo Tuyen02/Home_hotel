@@ -1,0 +1,77 @@
+[Mon, 23 Sep 2024 08:44:22 +0700] [home.my] [127.0.0.1] [Error(1): Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f.title' in 'field list' in C:\xampp\htdocs\Home_hotel\vendor\vinades\nukeviet\Core\Database.php:580
+Stack trace:
+#0 C:\xampp\htdocs\Home_hotel\vendor\vinades\nukeviet\Core\Database.php(580): PDO->prepare('SELECT r.*, GRO...', Array)
+#1 C:\xampp\htdocs\Home_hotel\modules\room\funcs\main.php(24): NukeViet\Core\Database->prepare('SELECT r.*, GRO...')
+#2 C:\xampp\htdocs\Home_hotel\index.php(369): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown] [FILE: /vendor/vinades/nukeviet/Core/Database.php] [LINE: 580]
+[Mon, 23 Sep 2024 09:42:53 +0700] [home.my] [127.0.0.1] [Warning(2): foreach() argument must be of type array|object, null given] [FILE: /modules/room/theme.php] [LINE: 27] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 28    FILE: /modules/room/funcs/main.php
+
+[Mon, 23 Sep 2024 09:42:53 +0700] [home.my] [127.0.0.1] [Warning(2): foreach() argument must be of type array|object, null given] [FILE: /modules/room/theme.php] [LINE: 32] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 28    FILE: /modules/room/funcs/main.php
+
+[Mon, 23 Sep 2024 09:47:27 +0700] [home.my] [127.0.0.1] [Run-time notices(8192): explode(): Passing null to parameter #2 ($string) of type string is deprecated] [FILE: /themes/home/blocks/global.room.php] [LINE: 91] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 30    FILE: /modules/room/funcs/main.php
+#3  LINE: 378   FILE: /themes/home/theme.php
+#4  LINE: 178   FILE: /includes/core/user_functions.php
+#5  LINE: 132   FILE: /themes/home/blocks/global.room.php
+#6  LINE: 91    FILE: /themes/home/blocks/global.room.php
+
+[Mon, 23 Sep 2024 09:47:27 +0700] [home.my] [127.0.0.1] [Run-time notices(8192): explode(): Passing null to parameter #2 ($string) of type string is deprecated] [FILE: /themes/home/blocks/global.room.php] [LINE: 93] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 30    FILE: /modules/room/funcs/main.php
+#3  LINE: 378   FILE: /themes/home/theme.php
+#4  LINE: 178   FILE: /includes/core/user_functions.php
+#5  LINE: 132   FILE: /themes/home/blocks/global.room.php
+#6  LINE: 93    FILE: /themes/home/blocks/global.room.php
+
+[Mon, 23 Sep 2024 09:47:27 +0700] [home.my] [127.0.0.1] [Run-time notices(8192): explode(): Passing null to parameter #2 ($string) of type string is deprecated] [FILE: /themes/home/blocks/global.room.php] [LINE: 94] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 30    FILE: /modules/room/funcs/main.php
+#3  LINE: 378   FILE: /themes/home/theme.php
+#4  LINE: 178   FILE: /includes/core/user_functions.php
+#5  LINE: 132   FILE: /themes/home/blocks/global.room.php
+#6  LINE: 94    FILE: /themes/home/blocks/global.room.php
+
+[Mon, 23 Sep 2024 11:09:12 +0700] [home.my] [127.0.0.1] [Warning(2): file_get_contents(C:/xampp/htdocs/Home_hotel/themes/admin_default/modules/room\booking.tpl): Failed to open stream: No such file or directory] [FILE: /includes/xtemplate.class.php] [LINE: 1333] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+#2  LINE: 103   FILE: /modules/room/admin/booking_content.php
+#3  LINE: 395   FILE: /includes/xtemplate.class.php
+#4  LINE: 506   FILE: /includes/xtemplate.class.php
+#5  LINE: 537   FILE: /includes/xtemplate.class.php
+#6  LINE: 1365  FILE: /includes/xtemplate.class.php
+#7  LINE: 1333  FILE: /includes/xtemplate.class.php
+
+[Mon, 23 Sep 2024 16:37:36 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "booking_management"] [FILE: /modules/room/admin/booking_content.php] [LINE: 7] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Mon, 23 Sep 2024 20:52:54 +0700] [home.my] [127.0.0.1] [Warning(2): exif_read_data(hairdryer.svg): File not supported] [FILE: /vendor/vinades/nukeviet/Files/Upload.php] [LINE: 1076] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+#2  LINE: 73    FILE: /admin/upload/upload.php
+#3  LINE: 1076  FILE: /vendor/vinades/nukeviet/Files/Upload.php
+
+[Mon, 23 Sep 2024 21:39:55 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "status"] [FILE: /modules/room/admin/booking_content.php] [LINE: 62] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Mon, 23 Sep 2024 21:39:55 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "status"] [FILE: /modules/room/admin/booking_content.php] [LINE: 63] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Mon, 23 Sep 2024 21:39:55 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "status"] [FILE: /modules/room/admin/booking_content.php] [LINE: 69] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Mon, 23 Sep 2024 21:57:54 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "booking_status"] [FILE: /modules/room/admin/booking_content.php] [LINE: 52] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Mon, 23 Sep 2024 21:57:54 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "pending"] [FILE: /modules/room/admin/booking_content.php] [LINE: 53] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Mon, 23 Sep 2024 22:00:26 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "canceled"] [FILE: /modules/room/admin/booking_content.php] [LINE: 47] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+
+[Mon, 23 Sep 2024 22:04:27 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "canceled"] [FILE: /modules/room/admin/booking_content.php] [LINE: 49] [TRACE:]
+#1  LINE: 182   FILE: /admin/index.php
+

@@ -1,0 +1,29 @@
+[Thu, 26 Sep 2024 10:23:16 +0700] [home.my] [127.0.0.1] [Warning(2): require(C:/xampp/htdocs/Home_hotel/modules/room/funcs/view.php): Failed to open stream: No such file or directory] [FILE: /index.php] [LINE: 369] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+
+[Thu, 26 Sep 2024 10:23:16 +0700] [home.my] [127.0.0.1] [Error(1): Uncaught Error: Failed opening required 'C:/xampp/htdocs/Home_hotel/modules/room/funcs/view.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Home_hotel\index.php:369
+Stack trace:
+#0 {main}
+  thrown] [FILE: /index.php] [LINE: 369]
+[Thu, 26 Sep 2024 21:30:11 +0700] [home.my] [127.0.0.1] [Warning(2): Array to string conversion] [FILE: /includes/xtemplate.class.php] [LINE: 864] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 139   FILE: /modules/room/funcs/main.php
+
+[Thu, 26 Sep 2024 21:40:38 +0700] [home.my] [127.0.0.1] [Warning(2): imagecreatefrompng(): gd-png: libpng warning: iCCP: known incorrect sRGB profile] [FILE: /includes/core/statimg.php] [LINE: 27] [TRACE:]
+#1  LINE: 102   FILE: /index.php
+#2  LINE: 27    FILE: /includes/core/statimg.php
+
+[Thu, 26 Sep 2024 21:54:49 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined variable $checkin_date] [FILE: /modules/room/funcs/main.php] [LINE: 7] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+
+[Thu, 26 Sep 2024 21:54:49 +0700] [home.my] [127.0.0.1] [Run-time notices(8192): Creation of dynamic property NukeViet\Core\Request::$ is deprecated] [FILE: /modules/room/funcs/main.php] [LINE: 7] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+
+[Thu, 26 Sep 2024 21:54:49 +0700] [home.my] [127.0.0.1] [Error(1): Uncaught Error: Undefined constant "facilities_filter" in C:\xampp\htdocs\Home_hotel\modules\room\funcs\main.php:12
+Stack trace:
+#0 C:\xampp\htdocs\Home_hotel\index.php(369): require()
+#1 {main}
+  thrown] [FILE: /modules/room/funcs/main.php] [LINE: 12]
+[Thu, 26 Sep 2024 21:55:12 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined variable $checkin_date] [FILE: /modules/room/funcs/main.php] [LINE: 38] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+
