@@ -48,17 +48,14 @@ $room['price'] = number_format($room['price'], 0, ',', '.') . '₫';
 $room['features'] = !empty($room['features']) ? explode(',', $room['features']) : [];
 $room['facilities'] = !empty($room['facilities']) ? explode(',', $room['facilities']) : [];
 $room_images = !empty($room['room_images']) ? explode(',', $room['room_images']) : [];
+$room['booking_url'] = NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=booking';
 
 // Gán ảnh vào carousel
-if (!empty($room_images)) {
-    foreach ($room_images as $index => $image) {
-        $isActive = $index === 0 ? 'active' : ''; // Ảnh đầu tiên sẽ có class active
-        $xtpl->assign('IMAGE', NV_BASE_SITEURL . 'uploads/room/images/' . $image);
-        $xtpl->assign('ACTIVE', $isActive);
-        $xtpl->parse('main.carousel');
-    }
-} else {
-    $room['image'] = NV_BASE_SITEURL . 'themes/default/images/no_image.jpg'; // Ảnh mặc định nếu không có
+foreach ($room_images as $index => $image) {
+    $isActive = $index === 0 ? 'active' : ''; // Ảnh đầu tiên sẽ có class active
+    $xtpl->assign('IMAGE', NV_BASE_SITEURL . 'uploads/room/images/' . $image);
+    $xtpl->assign('ACTIVE', $isActive);
+    $xtpl->parse('main.carousel');
 }
 
 // Hiển thị các đặc điểm phòng

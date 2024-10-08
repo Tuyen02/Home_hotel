@@ -14,3 +14,10 @@ if (!defined('NV_SYSTEM')) {
 }
 
 define('NV_IS_MOD_ROOM', true);
+
+$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_features';
+$features_list = $nv_Cache->db($sql, 'id', $module_name);
+
+$sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_facilities';
+$facilities_list = $nv_Cache->db($sql, 'id', $module_name);
+

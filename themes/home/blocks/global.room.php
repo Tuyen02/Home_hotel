@@ -1,4 +1,7 @@
 <?php
+if (!defined('NV_MAINFILE')) {
+    exit('Stop!!!');
+}
 if (!nv_function_exists('nv_block_room_by_id')) {
 
     function nv_room_config($module, $data_block, $lang_block)
@@ -85,14 +88,13 @@ if (!nv_function_exists('nv_block_room_by_id')) {
 
             if ($room) {
                 $room['price'] = number_format($room['price'], 0, ',', '.') . '₫';
-                // Gán dữ liệu phòng vào template
                 $room['images'] = array_map(function($image) {
                     return NV_BASE_SITEURL . 'uploads/room/images/' . $image;
                 }, explode(',', $room['images']));
                 
                 $room['features'] = explode(',', $room['features']);
                 $room['facilities'] = explode(',', $room['facilities']);
-                $room['booking_url'] = NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=booking&amp;id=' . $room['room_id'];
+                $room['booking_url'] = NV_BASE_SITEURL . 'vi/room/booking';
                 $room['view_url'] = NV_BASE_SITEURL . NV_LANG_DATA . '/room/view?id=' . $room['room_id'];
 
                 $xtpl->assign('ROOM', $room);

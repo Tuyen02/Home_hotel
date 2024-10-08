@@ -24,4 +24,6 @@ if (defined('NV_IS_SPADMIN')) {
     // $submenu['images_list'] = $lang_module['images_list'];
     // $submenu['room_images'] = $lang_module['room_images'];
     $submenu['booking_content'] = $lang_module['booking_content'];
+    $submenu['booking_confirm'] = $lang_module['booking_confirm'];
+    $submenu['booking_cancel'] = $lang_module['booking_cancel'];
 }

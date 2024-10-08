@@ -1,3 +1,12 @@
+<link rel="stylesheet" type="text/css" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/custom.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
 <footer>
     <div class="wraper">
         <div class="container-fluid bg-white mt-5">
@@ -19,7 +28,7 @@
                     [COMPANY_INFO]
                    </div>
                    <div class="bttop mt-5">
-                    <a class="text-dark"><i class="fa fa-arrow-up" aria-hidden="true"></i>Trở lại đầu trang</a>
+                    <a href="#" class="text-dark float-end">Trang chủ<i class="fa fa-arrow-up" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>

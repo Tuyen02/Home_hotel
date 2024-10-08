@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12 text-center mt-5">
-                    <a href="facilities.php"
+                    <a href="/vi/room/"
                         class="btn btn-outline-dark fw-bold shadow-none fs-4 ">Xem thêm phòng
                         &gt;&gt;&gt;</a>
                 </div>
@@ -51,11 +51,6 @@
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-4 text-center bg-white rounded shadow py-4 my-3 mx-2">
                     [FACILITIES5]
-                </div>
-                <div class="col-lg-12 text-center mt-5">
-                    <a href="facilities.php"
-                        class="btn btn-outline-dark fw-bold shadow-none fs-4 ">Xem thêm tiện ích
-                        &gt;&gt;&gt;</a>
                 </div>
             </div>
         </div>

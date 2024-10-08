@@ -1,0 +1,7 @@
+[Tue, 08 Oct 2024 15:52:59 +0700] [home.my] [127.0.0.1] [Warning(2): Array to string conversion] [FILE: /includes/xtemplate.class.php] [LINE: 864] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+#2  LINE: 130   FILE: /modules/room/funcs/main.php
+
+[Tue, 08 Oct 2024 15:52:59 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined variable $total_rooms] [FILE: /modules/room/funcs/main.php] [LINE: 137] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+

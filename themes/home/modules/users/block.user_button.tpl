@@ -32,7 +32,7 @@
 
 <!-- BEGIN: signed -->
 <span>
-    <a title="{USER.full_name}" class="pointer button user" data-toggle="tip" data-target="#userBlock_{BLOCKID}"
+    <a title="{USER.full_name}" class="pointer button user border" data-toggle="tip" data-target="#userBlock_{BLOCKID}"
         data-click="y" style="background-image:url({AVATA})">
         <span class="hidden">{USER.full_name}</span>
     </a>

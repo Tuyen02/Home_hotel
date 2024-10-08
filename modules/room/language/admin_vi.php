@@ -28,5 +28,7 @@ $lang_module['facilities_list'] = 'Danh sách tiện ích';
 $lang_module['images_content'] = 'Thêm hình ảnh';
 $lang_module['images_list'] = 'Danh sách hình ảnh';
 $lang_module['room_images'] = 'Quản lý ảnh theo phòng';
-$lang_module['booking_content'] = 'Quản lý Booking';
+$lang_module['booking_content'] = 'Danh sách Booking đang chờ';
+$lang_module['booking_confirm'] = 'Danh sách Booking đã xác nhận';
+$lang_module['booking_cancel'] = 'Danh sách Booking đã hủy';
 

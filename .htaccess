@@ -61,6 +61,7 @@ ErrorDocument 504 /error.php?code=504&nvDisableRewriteCheck=1
 
 #nukeviet_config_end
 ##################################################################################
+AddType text/css .css
 
 ##################################################################################
 #nukeviet_rewrite_start //Please do not change the contents of the following lines
@@ -85,12 +86,7 @@ RewriteRule (.*)(\/|\.html)$ index.php
 RewriteRule (.*)tag\/([^?]+)$ index.php
 RewriteRule ^([a-zA-Z0-9-\/]+)\/([a-zA-Z0-9-]+)$ /$1/$2/ [L,R=301]
 RewriteRule ^([a-zA-Z0-9-]+)$ /$1/ [L,R=301]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^themes/(.*)\.css$ themes/$1.css [L]
 </IfModule>
 
 #nukeviet_rewrite_end
 ##################################################################################
-
-AddType text/css .css

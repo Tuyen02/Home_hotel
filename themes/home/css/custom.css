@@ -46,7 +46,6 @@
 
 #header {
     height: 80px;
-    position: sticky;
 }
 
 #header .dangnhap {
@@ -137,4 +136,34 @@
 
 a.btn {
     color: black;
+}
+
+
+.h-line {
+    width: 150px;
+    margin: 0 auto;
+    height: 1.7px;
+}
+
+.form-label {
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.badge {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#admintoolbar {
+    display: block;
+    width: 50px;
+}
+
+#admintoolbar:hover {
+    width: 320px;
+}
+
+.personalArea {
+    margin-left: 100px;
 }

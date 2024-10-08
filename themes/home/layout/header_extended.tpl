@@ -1,7 +1,7 @@
 <noscript>
     <div class="alert alert-danger">{LANG.nojs}</div>
 </noscript>
-<header class="bg-white shadow sticky-sm-top">
+<header class="bg-white shadow fixed-top">
     <div class="section-header">
         <div class="wraper">
             <div id="header">

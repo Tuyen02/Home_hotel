@@ -29,3 +29,5 @@ $lang_module['images_content'] = 'Add images';
 $lang_module['images_list'] = 'Images list';
 $lang_module['room_images'] = 'Room Images';
 $lang_module['booking_content'] = 'Booking management';
+$lang_module['booking_confirm'] = 'Booking confirm';
+$lang_module['booking_cancel'] = 'Booking cancel';

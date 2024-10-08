@@ -13,16 +13,13 @@ if (!defined('NV_ADMIN') or !defined('NV_MAINFILE')) {
     exit('Stop!!!');
 }
 
-$module_version = [
+$module_version = array(
     'name' => 'Room',
-    'modfuncs' => 'main,detail,booking',
+    'modfuncs' => 'main,view,booking,confirmbooking,processbooking',
     'is_sysmod' => 0,
     'virtual' => 1,
-    'version' => '4.5.06',
-    'date' => '02/09/2024',
-    'author' => 'tuyen',
-    'note' => '',
-    'uploads_dir' => [
-        $module_upload
-    ]
-];
+    'version' => '4.5.03',
+    'date' => 'Thursday, November 9, 2023 4:00:00 PM GMT+07:00',
+    'author' => 'VINADES.,JSC <contact@vinades.vn>',
+    'note' => ''
+);

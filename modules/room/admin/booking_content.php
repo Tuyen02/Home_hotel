@@ -1,30 +1,35 @@
 <?php
-
 if (!defined('NV_IS_FILE_ADMIN')) {
     exit('Stop!!!');
 }
 
 $page_title = $lang_module['booking_content'];
 
+// Xử lý xác nhận hoặc hủy booking
+$action = $nv_Request->get_string('action', 'get');
+$booking_id = $nv_Request->get_int('id', 'get');
+
+if ($action === 'confirm' && !empty($booking_id)) {
+    // Cập nhật trạng thái booking thành "Đã xác nhận"
+    $sql = "UPDATE " . NV_PREFIXLANG . "_room_booking SET booking_status = 1 WHERE booking_id = :booking_id";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([':booking_id' => $booking_id]);
+}
+
+if ($action === 'cancel' && !empty($booking_id)) {
+    // Cập nhật trạng thái booking thành "Đã hủy"
+    $sql = "UPDATE " . NV_PREFIXLANG . "_room_booking SET booking_status = 2 WHERE booking_id = :booking_id";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([':booking_id' => $booking_id]);
+}
+
 // Lấy danh sách booking từ cơ sở dữ liệu
 try {
     $sql = "
     SELECT 
-        b.booking_id,  
-        b.check_in, 
-        b.check_out, 
-        b.datentime AS booking_date, 
-        b.booking_status,  
-        u.username AS user_name, 
-        bd.phonenum AS user_phone,  
-        u.email AS user_email, 
-        r.name AS room_name, 
-        r.price AS room_price,
-        b.arrival AS cancel_request  -- Lấy thông tin yêu cầu hủy
+        *   
     FROM " . NV_PREFIXLANG . "_room_booking b
-    INNER JOIN " . NV_PREFIXLANG . "_room_rooms r ON b.room_id = r.id
-    INNER JOIN " . NV_PREFIXLANG . "_room_booking_details bd ON b.booking_id = bd.booking_id  
-    INNER JOIN " . NV_USERS_GLOBALTABLE . " u ON b.userid = u.userid
+    where booking_status = 0
     ORDER BY b.booking_id ASC";
 
     $result = $db->query($sql);
@@ -40,33 +45,44 @@ $xtpl->assign('LANG', $lang_module);
 
 // Xử lý danh sách booking
 foreach ($bookings as $booking) {
+    $total_price = 0;
     $checkin = $booking['check_in'];   
     $checkout = $booking['check_out']; 
-    $days_stayed = ceil(($checkout - $checkin) / 86400); 
-    $total_price = $days_stayed * $booking['room_price'];
+    $_booking_details = $db->query("SELECT * FROM " . NV_PREFIXLANG . "_" . $module_data . "_booking_details WHERE booking_id = ". $booking['booking_id']);
+    while ($booking_details = $_booking_details->fetch()) {
+        $booking['user_name'] = $booking_details['user_name'];
+        $booking['user_phone'] = $booking_details['phonenum'];
+    
+        $booking_details['price']= number_format($booking_details['price']);
+        
+        $days_stayed = ceil(($checkout - $checkin) / 86400); 
+        $total_price += $days_stayed * $booking_details['total_pay'];
+        
+        $xtpl->assign('ROOM', $booking_details);
+        $xtpl->parse('main.booking.room');
+    }
+    
     $lang_module['pending'] = 'Chờ xác nhận';
     $lang_module['confirmed'] = 'Đã xác nhận';
     $lang_module['canceled'] = 'Đã hủy';
 
     // Đảm bảo rằng ngôn ngữ đã được định nghĩa
     $status_label = '';
-    if ($booking['booking_status'] == 1) {
+    if ($booking['booking_status'] == 0) {
         $status_label = $lang_module['pending']; // Pending
-    } elseif ($booking['booking_status'] == 2) {
+    } elseif ($booking['booking_status'] == 1) {
         $status_label = $lang_module['confirmed']; // Confirmed
-    } elseif ($booking['booking_status'] == 0) {
+    } elseif ($booking['booking_status'] == 2) {
         $status_label = $lang_module['canceled']; // Canceled
     }
 
+    
     $xtpl->assign('BOOKING', array(
         'booking_id' => $booking['booking_id'],
         'user_name' => $booking['user_name'],
-        'user_email' => $booking['user_email'],
         'user_phone' => $booking['user_phone'],
-        'room_name' => $booking['room_name'],
-        'room_price' => number_format($booking['room_price'], 0, ',', '.'), 
+
         'total_price' => number_format($total_price, 0, ',', '.'), 
-        'booking_date' => date('d/m/Y', $booking['booking_date']), 
         'checkin' => date('d/m/Y', $checkin), 
         'checkout' => date('d/m/Y', $checkout), 
         'status' => $booking['booking_status'],  
@@ -76,11 +92,8 @@ foreach ($bookings as $booking) {
     ));
     
     // Hiển thị trạng thái và các hành động
-    if ($booking['booking_status'] == 1) {
+    if ($booking['booking_status'] == 0) {
         $xtpl->parse('main.booking.pending_action');
-    } elseif ($booking['cancel_request'] == 1) {
-        // Hiển thị khi có yêu cầu hủy từ khách hàng
-        $xtpl->parse('main.booking.cancel_request');
     } else {
         $xtpl->parse('main.booking.no_action');
     }

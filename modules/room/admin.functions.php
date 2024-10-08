@@ -24,6 +24,9 @@ $allow_func = [
     'images_content',
     'room_images',
     'booking_content',
+    'booking_confirm',
+    'booking_cancel',
+    'print_invoice',
 ];
 
 define('NV_IS_FILE_ADMIN', true);
