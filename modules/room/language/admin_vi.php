@@ -31,4 +31,5 @@ $lang_module['room_images'] = 'Quản lý ảnh theo phòng';
 $lang_module['booking_content'] = 'Danh sách Booking đang chờ';
 $lang_module['booking_confirm'] = 'Danh sách Booking đã xác nhận';
 $lang_module['booking_cancel'] = 'Danh sách Booking đã hủy';
+$lang_module['finance_report'] = 'Thống kê';
 

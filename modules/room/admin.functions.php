@@ -27,6 +27,7 @@ $allow_func = [
     'booking_confirm',
     'booking_cancel',
     'print_invoice',
+    'finance_report',
 ];
 
 define('NV_IS_FILE_ADMIN', true);

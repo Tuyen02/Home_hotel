@@ -26,4 +26,5 @@ if (defined('NV_IS_SPADMIN')) {
     $submenu['booking_content'] = $lang_module['booking_content'];
     $submenu['booking_confirm'] = $lang_module['booking_confirm'];
     $submenu['booking_cancel'] = $lang_module['booking_cancel'];
+    $submenu['finance_report'] = $lang_module['finance_report'];
 }

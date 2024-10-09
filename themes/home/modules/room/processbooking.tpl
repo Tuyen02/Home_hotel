@@ -14,7 +14,7 @@
         <!-- Thông tin khách sạn -->
         <div class="hotel-info text-center mb-5">
             <p class="fw-bold">Khách sạn HOME</p>
-            <p>123 Đường ABC, Quận 1, TP. HCM</p>
+            <p>123 Đường ABC, Quận 1, Ha Noi</p>
             <p>0123 456 789</p>
             <p>contact@khachsanhome.com</p>
         </div>

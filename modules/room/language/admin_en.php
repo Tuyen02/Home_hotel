@@ -31,3 +31,4 @@ $lang_module['room_images'] = 'Room Images';
 $lang_module['booking_content'] = 'Booking management';
 $lang_module['booking_confirm'] = 'Booking confirm';
 $lang_module['booking_cancel'] = 'Booking cancel';
+$lang_module['finance_report'] = 'Finance report';

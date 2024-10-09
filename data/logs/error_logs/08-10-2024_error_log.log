@@ -5,3 +5,6 @@
 [Tue, 08 Oct 2024 15:52:59 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined variable $total_rooms] [FILE: /modules/room/funcs/main.php] [LINE: 137] [TRACE:]
 #1  LINE: 369   FILE: /index.php
 
+[Tue, 08 Oct 2024 23:45:11 +0700] [home.my] [127.0.0.1] [Warning(2): Undefined array key "days_stayed"] [FILE: /modules/room/funcs/processbooking.php] [LINE: 76] [TRACE:]
+#1  LINE: 369   FILE: /index.php
+
