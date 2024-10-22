@@ -3,14 +3,14 @@
     <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr >
-                <th class="text-nowrap text-center">STT</th>
-                <th class="text-nowrap text-center">Name</th>
-                <th class="text-nowrap text-center">Area</th>
-                <th class="text-nowrap text-center">Guest</th>
-                <th class="text-nowrap text-center">Price</th>
-                <th class="text-nowrap text-center">Quantity</th>
-                <th class="text-nowrap text-center">Status</th>
-                <th class="text-nowrap text-center">Func</th>
+                <th class="text-nowrap text-center">{LANG.stt}</th>
+                <th class="text-nowrap text-center">{LANG.name}</th>
+                <th class="text-nowrap text-center">{LANG.area}</th>
+                <th class="text-nowrap text-center">{LANG.guest}</th>
+                <th class="text-nowrap text-center">{LANG.price}</th>
+                <th class="text-nowrap text-center">{LANG.quantity}</th>
+                <th class="text-nowrap text-center">{LANG.status}</th>
+                <th class="text-nowrap text-center">{LANG.func}</th>
             </tr>
         </thead>
         <tbody>
@@ -26,17 +26,17 @@
                     <td class="text-center">{ROW.name}</td>
                     <td class="text-center">{ROW.area}m<sup>2</sup></td>
                     <td class="text-center">
-                        <span class="badge rounded-pill bg-light text-dark">Adult: {ROW.adult}</span>
+                        <span class="badge rounded-pill bg-light text-dark">{LANG.adult}: {ROW.adult}</span>
                         </br>
-                        <span class="badge rounded-pill bg-light text-dark">Children: {ROW.children}</span>
+                        <span class="badge rounded-pill bg-light text-dark">{LANG.children}: {ROW.children}</span>
                     </td>
                     <td class="text-center text-danger">{ROW.price} đ</td>
                     <td class="text-center">{ROW.quantity}</td>
                     <td class="text-center"><input type="checkbox" name="active" {ROW.active} onchange="nv_change_active({ROW.id})"></td>
                     <td class="text-center w-50">
-                        <a href="{ROW.url_edit}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i> EDIT</a>
-                        <a href="{ROW.url_image}" class="btn btn-primary btn-sm"><i class="fa fa-picture-o"></i></i> IMAGE</a>
-                        <a href="{ROW.url_delete}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash-o"></i></i> DELETE</a>
+                        <a href="{ROW.url_edit}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>{LANG.btn_edit}</a>
+                        <a href="{ROW.url_image}" class="btn btn-primary btn-sm"><i class="fa fa-picture-o"></i></i>{LANG.img}</a>
+                        <a href="{ROW.url_delete}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash-o"></i></i>{LANG.btn_delete}s</a>
                     </td>
                 </tr>
             <!-- END: loop -->

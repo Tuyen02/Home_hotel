@@ -3,59 +3,59 @@
         exit('Stop!!!');
     }
 
-// Lấy thông tin từ yêu cầu
-$checkin = $nv_Request->get_title('checkin', 'get,post', ''); 
-$checkout = $nv_Request->get_title('checkout', 'get,post', ''); 
-$adult = $nv_Request->get_int('adult', 'get,post', 0);
-$children = $nv_Request->get_int('children', 'get,post', 0);
-$facilities_filter = $nv_Request->get_array('facilities', 'get,post', []);
+    // Lấy thông tin từ yêu cầu
+    $checkin = $nv_Request->get_title('checkin', 'get,post', '');
+    $checkout = $nv_Request->get_title('checkout', 'get,post', '');
+    $adult = $nv_Request->get_int('adult', 'get,post', 0);
+    $children = $nv_Request->get_int('children', 'get,post', 0);
+    $facilities_filter = $nv_Request->get_array('facilities', 'get,post', []);
 
-// Kiểm tra thông tin tìm kiếm có được gửi hay không
-$is_search = !empty($checkin) && !empty($checkout);
+    // Kiểm tra thông tin tìm kiếm có được gửi hay không
+    $is_search = !empty($checkin) && !empty($checkout);
 
-// Nếu không có thông tin tìm kiếm, chỉ cần hiển thị tất cả các phòng
-if (!$is_search) {
-    $conditions[] = "1"; // Để lấy tất cả các phòng
-}
-
-// Còn lại phần xử lý ngày tháng như trước
-$error = '';
-
-// Kiểm tra ngày nhận phòng và trả phòng
-if ($is_search) {
-    if (preg_match('/^([0-9]{4})\-([0-9]{2})\-([0-9]{2})$/', $checkin, $m)) {
-        $checkin_time = mktime(0, 0, 0, $m[2], $m[3], $m[1]);
-    } else {
-        $error = 'Thông tin ngày nhận phòng không hợp lệ.';
+    // Nếu không có thông tin tìm kiếm, chỉ cần hiển thị tất cả các phòng
+    if (!$is_search) {
+        $conditions[] = "1"; // Để lấy tất cả các phòng
     }
 
-    if (preg_match('/^([0-9]{4})\-([0-9]{2})\-([0-9]{2})$/', $checkout, $m)) {
-        $checkout_time = mktime(0, 0, 0, $m[2], $m[3], $m[1]);
-        if ($checkout_time <= $checkin_time) {
-            $error = 'Ngày trả phòng phải sau ngày nhận phòng.';
+    // Còn lại phần xử lý ngày tháng như trước
+    $error = '';
+
+    // Kiểm tra ngày nhận phòng và trả phòng
+    if ($is_search) {
+        if (preg_match('/^([0-9]{4})\-([0-9]{2})\-([0-9]{2})$/', $checkin, $m)) {
+            $checkin_time = mktime(0, 0, 0, $m[2], $m[3], $m[1]);
+        } else {
+            $error = 'Thông tin ngày nhận phòng không hợp lệ.';
         }
-    } else {
-        $error = 'Thông tin ngày trả phòng không hợp lệ.';
-    }
 
-    // Thêm điều kiện lọc
-    if (!empty($checkin_time) && !empty($checkout_time)) {
-        $conditions[] = "r.id NOT IN (
+        if (preg_match('/^([0-9]{4})\-([0-9]{2})\-([0-9]{2})$/', $checkout, $m)) {
+            $checkout_time = mktime(0, 0, 0, $m[2], $m[3], $m[1]);
+            if ($checkout_time <= $checkin_time) {
+                $error = 'Ngày trả phòng phải sau ngày nhận phòng.';
+            }
+        } else {
+            $error = 'Thông tin ngày trả phòng không hợp lệ.';
+        }
+
+        // Thêm điều kiện lọc
+        if (!empty($checkin_time) && !empty($checkout_time)) {
+            $conditions[] = "r.id NOT IN (
            SELECT 1 FROM " . NV_PREFIXLANG . "_" . $module_data . "_booking_details AS bd INNER JOIN " . NV_PREFIXLANG . "_" . $module_data . "_booking as b ON bd.booking_id=b.booking_id
             WHERE ('$checkin_time' BETWEEN check_in AND check_out OR '$checkout_time' BETWEEN check_in AND check_out)
             OR (check_in BETWEEN '$checkin_time' AND '$checkout_time')
         )";
-    }
+        }
 
-    // Lọc theo số lượng người lớn và trẻ em
-    // Lọc theo số lượng người lớn và trẻ em (thỏa mãn cả hai điều kiện)
-    if ($adult > 0 && $children > 0) {
-        $conditions[] = "(r.adult >= " . intval($adult) . " AND r.children >= " . intval($children) . ")";
-    }
+        // Lọc theo số lượng người lớn và trẻ em
+        // Lọc theo số lượng người lớn và trẻ em (thỏa mãn cả hai điều kiện)
+        if ($adult > 0 && $children > 0) {
+            $conditions[] = "(r.adult >= " . intval($adult) . " AND r.children >= " . intval($children) . ")";
+        }
 
-    // Lọc theo tiện ích
-    if (!empty($facilities_filter)) {
-        $facilities_filter_sql = implode(',', array_map('intval', $facilities_filter));
+        // Lọc theo tiện ích
+        if (!empty($facilities_filter)) {
+            $facilities_filter_sql = implode(',', array_map('intval', $facilities_filter));
             $conditions[] = "r.id IN (
                 SELECT room_id FROM " . NV_PREFIXLANG . "_room_roomxfacilities 
                 WHERE facilities_id IN ($facilities_filter_sql)

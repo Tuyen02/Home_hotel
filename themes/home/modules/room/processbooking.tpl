@@ -1,5 +1,5 @@
 <!-- BEGIN: main -->
-<link rel="stylesheet" type="text/css" href="{NV_BASE_SITEURL}themes/{TEMPLATE}/css/custom.css" />
+<link rel="stylesheet" type="text/css" href="{NV_BASE_SITEURL}themes/home/css/custom.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -9,37 +9,37 @@
     crossorigin="anonymous"></script>
 <div class="container mt-5">
     <div class="invoice-container p-4 border rounded shadow-sm">
-        <h2 class="text-center mb-4">Hóa đơn đặt phòng khách sạn</h2>
+        <h2 class="text-center mb-4">{LANG.bill}</h2>
 
         <!-- Thông tin khách sạn -->
         <div class="hotel-info text-center mb-5">
-            <p class="fw-bold">Khách sạn HOME</p>
-            <p>123 Đường ABC, Quận 1, Ha Noi</p>
-            <p>0123 456 789</p>
-            <p>contact@khachsanhome.com</p>
+            <p class="fw-bold">{LANG.hotel_name}</p>
+            <p>{LANG.hotel_address}</p>
+            <p>{LANG.hotel_phone}</p>
+            <p>{LANG.hotel_email}</p>
         </div>
 
         <!-- Thông tin đặt phòng -->
         <div class="invoice-details mb-4">
-            <p><strong>Mã đặt phòng:</strong> {BOOKING.booking_id}</p>
-            <p><strong>Tên khách hàng:</strong> {BOOKING.user_name}</p>
-            <p><strong>Số điện thoại:</strong> {BOOKING.user_phone}</p>
-            <p><strong>Ngày nhận phòng:</strong> {BOOKING.checkin}</p>
-            <p><strong>Ngày trả phòng:</strong> {BOOKING.checkout}</p>
-            <p><strong>Tổng tiền:</strong> {BOOKING.total_price} VND</p>
-            <p><strong>Trạng thái:</strong> {BOOKING.status_label}</p>
-            <p>Khách sạn sẽ gọi điện thông báo với khách hàng về trạng thái đặt phòng sớm nhất. Vui lòng chú ý điện thoại!</p>
+            <p><strong>{LANG.book_id}:</strong> {BOOKING.booking_id}</p>
+            <p><strong>{LANG.guest_name}:</strong> {BOOKING.user_name}</p>
+            <p><strong>{LANG.phone_number}:</strong> {BOOKING.user_phone}</p>
+            <p><strong>{LANG.check_in}:</strong> {BOOKING.checkin}</p>
+            <p><strong>{LANG.check_out}:</strong> {BOOKING.checkout}</p>
+            <p><strong>{LANG.total_price}:</strong> {BOOKING.total_price} VND</p>
+            <p><strong>{LANG.status}:</strong> {BOOKING.status_label}</p>
+            <p>{LANG.note1}</p>
         </div>
 
         <!-- Chi tiết các phòng đã đặt -->
         <div class="room-details mb-4">
-            <h3 class="mb-3">Chi tiết phòng đã đặt</h3>
+            <h3 class="mb-3">{LANG.book_detail}</h3>
             <table class="table table-striped">
                 <thead class="table-light">
                     <tr>
-                        <th scope="col">Tên phòng</th>
-                        <th scope="col" class="text-end">Giá phòng</th>
-                        <th scope="col" class="text-end">Tổng thanh toán</th>
+                        <th scope="col">{LANG.room_name}</th>
+                        <th scope="col" class="text-end">{LANG.room_price}</th>
+                        <th scope="col" class="text-end">{LANG.sum_bill}</th>
                     </tr>
                 </thead>
                 <tbody>

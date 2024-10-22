@@ -167,3 +167,101 @@ a.btn {
 .personalArea {
     margin-left: 100px;
 }
+
+.carousel-container {
+    width: 60%;
+    height: 70vh; /* Tăng chiều cao lên một chút */
+    overflow: hidden;
+    position: relative;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* block-search */
+
+.availability-form {
+    margin-top: -50px;
+    z-index: 2;
+    position: relative;
+    font-family: 'Noto Sans', sans-serif; /* Đồng bộ font chữ */
+    font-size: 20px; /* Cỡ chữ đồng bộ */
+}
+@media screen and (max-width: 575px) {
+    .availability-form {
+        margin-top: 25px;
+        padding: 0 35px;
+    }
+}
+.custom-bg {
+    background-color: #2ec1ac;
+}
+.custom-bg:hover {
+    background-color: #279e8c;
+}
+.title-text {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.label-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+.submit-btn {
+    font-size: 1.2rem;
+    font-weight: 500;
+    height: 35px;
+}
+
+/* block-carousel */
+
+.carousel-container {
+    width: 100%;
+    height: 70vh; /* Tăng chiều cao lên một chút */
+    overflow: hidden;
+    position: relative;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.confirm-booking {
+    margin-top: 20px;
+}
+
+.confirm-booking h2 {
+    margin-bottom: 20px;
+}
+
+.confirm-booking p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.form-check-label {
+    margin-left: 10px;
+}
+
+.form-control {
+    font-size: 30px;
+}

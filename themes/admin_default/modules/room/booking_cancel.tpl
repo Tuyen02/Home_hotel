@@ -12,13 +12,14 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
-                <th class="text-center">Phòng</th>
-                <th class="text-center">Người dùng</th>
-                <th class="text-center">Ngày nhận phòng</th>
-                <th class="text-center">Ngày trả phòng</th>
-                <th class="text-center">Tổng giá</th>
-                <th class="text-center">Trạng thái</th>
+                <th class="text-center">{LANG.id}</th>
+                <th class="text-center">{LANG.room}</th>
+                <th class="text-center">{LANG.user}</th>
+                <th class="text-center">{LANG.check_in}</th>
+                <th class="text-center">{LANG.check_out}</th>
+                <th class="text-center">{LANG.total_price}</th>
+                <th class="text-center">{LANG.status}</th>
+
             </tr>
         </thead>
         <tbody>
@@ -36,7 +37,7 @@
                 <td class="text-center">
                     <p ><b>Tổng tiền:</b> <span class="text-danger">{BOOKING.total_price} ₫</span></p>
                 </td>
-                <td class="text-center text-danger"><p>Đã hủy</p></td>
+                <td class="text-center text-danger">{BOOKING.status_label}</td>
             </tr>
             <!-- END: booking -->
         </tbody>

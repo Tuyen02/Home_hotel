@@ -25,7 +25,9 @@ if ($children > 0) {
 
 if ($checkin && $checkout) {
     $filter_sql .= " AND NOT EXISTS (
-        SELECT 1 FROM " . NV_PREFIXLANG . "_" . $module_data . "_booking_details AS bd INNER JOIN " . NV_PREFIXLANG . "_" . $module_data . "_booking as b ON bd.booking_id=b.booking_id
+        SELECT 1 
+        FROM " . NV_PREFIXLANG . "_" . $module_data . "_booking_details AS bd 
+        INNER JOIN " . NV_PREFIXLANG . "_" . $module_data . "_booking as b ON bd.booking_id=b.booking_id
         WHERE bd.room_id = r.id
         AND b.check_in <= :checkout AND b.check_out >= :checkin
     )";
@@ -74,7 +76,7 @@ if (!empty($rooms)) {
         $room['features'] = !empty($room['features']) ? explode(',', $room['features']) : [];
         $room['facilities'] = !empty($room['facilities']) ? explode(',', $room['facilities']) : [];
         $room['selected_count'] = isset($selected_rooms[$room['id']]) ? $selected_rooms[$room['id']] : 0;
-        
+
         $xtpl->assign('ROOM', $room);
 
         foreach ($room['features'] as $feature) {
@@ -88,7 +90,7 @@ if (!empty($rooms)) {
         }
 
         if ($room['selected_count'] > 0) {
-            $xtpl->assign('SELECTED_COUNT', $room['selected_count']);   
+            $xtpl->assign('SELECTED_COUNT', $room['selected_count']);
             $xtpl->parse('main.room.selected');
         } else {
             $xtpl->parse('main.room.not_selected');

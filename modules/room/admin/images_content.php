@@ -45,7 +45,7 @@ if ($nv_Request->isset_request("submit", "post")) {
         $stmt->bindParam("image", $post['image']);
         $stmt->bindParam("room_id", $post['room_id']);
         $stmt->bindParam("active", $post['active']);
-        
+
         $exe = $stmt->execute();
         if ($exe) {
             if ($post['id'] > 0) {

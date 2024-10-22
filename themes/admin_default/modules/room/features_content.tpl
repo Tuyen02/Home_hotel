@@ -9,14 +9,14 @@
     <input type="hidden" name="id" value="{POST.id}">
     <div class="form-group row ">
         <div class="col-md-4 ">
-            <label><strong>Feature name: </strong></label>
+            <label><strong>{LANG.fe_name}</strong></label>
         </div>
         <div class="col-md-20 ">
             <input class="form-control" type="text" value="{POST.name}" name="name">
         </div>
     </div>
     <div class="form-group row text-center ">
-        <button type="submit" class="btn btn-primary" value="1" name="submit">SAVE</button>
+        <button type="submit" class="btn btn-primary" value="1" name="submit">{LANG.btn_save}</button>
     </div>
 </form>
 </div>

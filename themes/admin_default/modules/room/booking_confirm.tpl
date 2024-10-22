@@ -7,18 +7,19 @@
 </div>
 <!-- END: error -->
 
-<h3>Danh sách booking</h3>
+<h3>{LANG.add_time}</h3>
 <div class="container">
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
-                <th class="text-center">Phòng</th>
-                <th class="text-center">Người dùng</th>
-                <th class="text-center">Ngày nhận phòng</th>
-                <th class="text-center">Ngày trả phòng</th>
-                <th class="text-center">Tổng giá</th>
-                <th class="text-center">Trạng thái</th>
+                <th class="text-center">{LANG.id}</th>
+                <th class="text-center">{LANG.room}</th>
+                <th class="text-center">{LANG.user}</th>
+                <th class="text-center">{LANG.check_in}</th>
+                <th class="text-center">{LANG.check_out}</th>
+                <th class="text-center">{LANG.total_price}</th>
+                <th class="text-center">{LANG.status}</th>
+                <th class="text-center">{LANG.func}</th>
             </tr>
         </thead>
         <tbody>
@@ -29,11 +30,10 @@
                 <td>{BOOKING.user_name}</td>
                 <td>{BOOKING.checkin}</td>
                 <td>{BOOKING.checkout}</td>
-                <td>{BOOKING.total_price} ₫
+                <td>{BOOKING.total_price}₫
                 </td>
                 <td class="text-center">
-                    <p>Đã xác nhận</p>
-                    <a href="#" target="_blank" class="btn btn-primary">In hóa đơn</a> <!-- Thêm nút in hóa đơn -->
+                    {BOOKING.status_label}
                 </td>
             </tr>
             <!-- END: booking -->

@@ -4,8 +4,9 @@
     <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr >
-                <th class="text-nowrap text-center">STT</th>
-                <th class="text-nowrap text-center">Name</th>
+                <th class="text-nowrap text-center">{LANG.stt}</th>
+                <th class="text-nowrap text-center">{LANG.name}</th>
+                <th class="text-nowrap text-center">{LANG.func}</th>
             </tr>
         </thead>
         <tbody>

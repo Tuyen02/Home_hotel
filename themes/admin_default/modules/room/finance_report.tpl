@@ -1,6 +1,6 @@
 <!-- BEGIN: main -->
 <style>
-    .chart{
+    .chart {
         padding-bottom: 30px;
     }
 </style>
@@ -17,11 +17,10 @@
             <!-- END: years -->
         </select>
     </form>
-
+    
     <!-- Biểu đồ -->
     <canvas id="monthlyChart" width="400" height="200"></canvas>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     // Dữ liệu từ PHP

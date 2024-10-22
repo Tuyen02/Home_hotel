@@ -12,14 +12,14 @@
         <input type="hidden" name="room_id" value="{ROOM_ID}">
         <div class="form-group row">
             <div class="col-md-4">
-                <label><strong>Thêm ảnh: </strong></label>
+                <label><strong>{LANG.add_img}</strong></label>
             </div>
             <div class="col-md-8">
                 <input class="form-control" type="file" accept=".jpg, .jpeg, .png" name="image">
             </div>
         </div>
         <div class="form-group row text-center">
-            <button type="submit" class="btn btn-primary" name="submit" value="Lưu">LƯU</button>
+            <button type="submit" class="btn btn-primary" name="submit" value="Lưu">{LANG.btn_submit}</button>
         </div>
     </form>
     <hr class="border border-primary border-3 opacity-75">
@@ -29,10 +29,10 @@
         <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th class="text-nowrap text-center">STT</th>
-                    <th class="text-nowrap text-center">Ảnh</th>
-                    <th class="text-nowrap text-center">Trạng thái</th> -->
-                    <th class="text-nowrap text-center">Hành động</th>
+                    <th class="text-nowrap text-center">{LANG.stt}</th>
+                    <th class="text-nowrap text-center">{LANG.img}</th>
+                    <th class="text-nowrap text-center">{LANG.status}</th> -->
+                    <th class="text-nowrap text-center">{LANG.func}</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +45,7 @@
                         <input type="checkbox" {IMAGE.active} onclick="nv_change_active({IMAGE.id})" />
                     </td>
                     <td>
-                        <a href="{IMAGE.url_delete}" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa ảnh này?');">Xóa</a>
+                        <a href="{IMAGE.url_delete}" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa ảnh này?');">{LANG.btn_delete}</a>
                     </td>
                 </tr>
                 <!-- END: image -->

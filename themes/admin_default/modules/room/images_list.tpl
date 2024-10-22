@@ -4,9 +4,9 @@
     <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr >
-                <th class="text-nowrap text-center">STT</th>
-                <th class="text-nowrap text-center">Image</th>
-                <th class="text-nowrap text-center">Active</th>
+                <th class="text-nowrap text-center">{LANG.stt}</th>
+                <th class="text-nowrap text-center">{LANG.img}</th>
+                <th class="text-nowrap text-center">{LANG.active}</th>
             </tr>
         </thead>
         <tbody>

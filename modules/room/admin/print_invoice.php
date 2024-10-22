@@ -39,9 +39,9 @@ if (isset($_GET['booking_id'])) {
     }
 
     // Tính toán tổng giá
-    $checkin = $booking['check_in'];   
-    $checkout = $booking['check_out']; 
-    $days_stayed = ceil(($checkout - $checkin) / 86400); 
+    $checkin = $booking['check_in'];
+    $checkout = $booking['check_out'];
+    $days_stayed = ceil(($checkout - $checkin) / 86400);
     $total_price = $days_stayed * $booking['room_price'];
 
     // Khởi tạo template
@@ -54,11 +54,11 @@ if (isset($_GET['booking_id'])) {
         'user_email' => $booking['user_email'],
         'user_phone' => $booking['user_phone'],
         'room_name' => $booking['room_name'],
-        'room_price' => number_format($booking['room_price'], 0, ',', '.'), 
-        'total_price' => number_format($total_price, 0, ',', '.'), 
-        'booking_date' => date('d/m/Y', $booking['booking_date']), 
-        'checkin' => date('d/m/Y', $checkin), 
-        'checkout' => date('d/m/Y', $checkout), 
+        'room_price' => number_format($booking['room_price'], 0, ',', '.'),
+        'total_price' => number_format($total_price, 0, ',', '.'),
+        'booking_date' => date('d/m/Y', $booking['booking_date']),
+        'checkin' => date('d/m/Y', $checkin),
+        'checkout' => date('d/m/Y', $checkout),
     ));
 
     $xtpl->parse('main');
@@ -70,4 +70,3 @@ if (isset($_GET['booking_id'])) {
 } else {
     die("Mã đặt phòng không hợp lệ.");
 }
-?>

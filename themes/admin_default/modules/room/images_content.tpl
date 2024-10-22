@@ -13,7 +13,7 @@
     <!-- BEGIN: current_image -->
     <div class="form-group row">
         <div class="col-md-4">
-            <label><strong>Current Image:</strong></label>
+            <label><strong>{LANG.current_img}:</strong></label>
         </div>
         <div class="col-md-20">
             <img src="{NV_BASE_SITEURL}/uploads/room/images/{POST.image}" alt="Room Image" class="img-thumbnail" style="max-width: 200px;">
@@ -23,7 +23,7 @@
 
     <div class="form-group row">
         <div class="col-md-4">
-            <label><strong>Image: </strong></label>
+            <label><strong>{LANG.img}: </strong></label>
         </div>
         <div class="col-md-20">
             <input class="form-control" type="file" accept=".svg,.png,.jpg" name="image">
@@ -32,7 +32,7 @@
 
     <div class="form-group row">
         <div class="col-md-4">
-            <label><strong>Active: </strong></label>
+            <label><strong>{LANG.active}: </strong></label>
         </div>
         <div class="col-md-20">
             <input type="checkbox" name="active" value="1" {POST.active_checked}>
@@ -40,7 +40,7 @@
     </div>
 
     <div class="form-group row text-center">
-        <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">SAVE</button>
+        <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">{LANG.btn_save}</button>
     </div>
 </form>
 </div>

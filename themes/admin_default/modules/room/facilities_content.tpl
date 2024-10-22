@@ -11,7 +11,7 @@
         <input type="hidden" name="id" value="{POST.id}">
         <div class="form-group row ">
             <div class="col-md-4 ">
-                <label><strong>Facility name: </strong></label>
+                <label><strong>{LANG.fac_name}</strong></label>
             </div>
             <div class="col-md-20 ">
                 <input class="form-control" type="text" value="{POST.name}" name="name">
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group row ">
             <div class="col-md-4 ">
-                <label><strong>Icon: </strong></label>
+                <label><strong>{LANG.icon} </strong></label>
             </div>
             <div class="col-md-20 ">
                 <input class="form-control" type="file" accept=".svg" name="icon">
@@ -27,14 +27,14 @@
         </div>
         <div class="form-group row ">
             <div class="col-md-4 ">
-                <label><strong>Description: </strong></label>
+                <label><strong>{LANG.description}</strong></label>
             </div>
             <div class="col-md-20 ">
                 <input class="form-control" type="text" value="{POST.description}" name="description">
             </div>
         </div>
         <div class="form-group row text-center ">
-            <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">SAVE</button>
+            <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">{LANG.save}</button>
         </div>
 </div>
 </form>

@@ -96,29 +96,28 @@ $sql_create_module[] = 'CREATE TABLE IF NOT EXISTS ' . $db_config['prefix'] . '_
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;';
 
 $sql_create_module[] = 'CREATE TABLE IF NOT EXISTS ' . $db_config['prefix'] . '_' . $lang . '_' . $module_data . '_booking (
-id INT AUTO_INCREMENT PRIMARY KEY,
-    fullname VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    phone VARCHAR(50) NOT NULL,
-    note TEXT DEFAULT NULL,
-    checkin DATE NOT NULL,
-    checkout DATE NOT NULL,
-    adult INT NOT NULL,
-    children INT NOT NULL,
-    payment_method INT NOT NULL,  -- 0: Thanh toán trực tiếp, 1: Thanh toán trực tuyến
-    booking_time INT NOT NULL,
-    status TINYINT DEFAULT 0,  -- 0: Chưa xác nhận, 1: Đã xác nhận
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+`booking_id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `check_in` int(11) NOT NULL,
+  `check_out` int(11) NOT NULL,
+  `booking_status` tinyint(3) NOT NULL DEFAULT 0,
+  `rate_review` int(11) DEFAULT NULL,
+  `datentime` int(11) NOT NULL DEFAULT 0
   PRIMARY KEY (booking_id),
   FOREIGN KEY (room_id) REFERENCES nv4_vi_room_rooms (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;';
 
 $sql_create_module[] = 'CREATE TABLE IF NOT EXISTS ' . $db_config['prefix'] . '_' . $lang . '_' . $module_data . '_booking_details (
-id INT AUTO_INCREMENT PRIMARY KEY,
-    booking_id INT NOT NULL,
-    room_id INT NOT NULL,
-    room_count INT NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `booking_id` int(11) NOT NULL,
+  `room_id` int(11) NOT NULL DEFAULT 0,
+  `room_name` varchar(100) NOT NULL,
+  `price` int(11) NOT NULL,
+  `quanlity` int(11) NOT NULL DEFAULT 0,
+  `total_pay` int(11) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `phonenum` varchar(100) NOT NULL,
+  `address` varchar(150) NOT NULL
   PRIMARY KEY (id),
   KEY booking_id (booking_id)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;';

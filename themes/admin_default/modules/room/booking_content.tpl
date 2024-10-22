@@ -12,14 +12,14 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
-                <th class="text-center">Phòng</th>
-                <th class="text-center">Người dùng</th>
-                <th class="text-center">Ngày nhận phòng</th>
-                <th class="text-center">Ngày trả phòng</th>
-                <th class="text-center">Tổng giá</th>
-                <th class="text-center">Trạng thái</th>
-                <th class="text-center">Hành động</th>
+                <th class="text-center">{LANG.id}</th>
+                <th class="text-center">{LANG.room}</th>
+                <th class="text-center">{LANG.user}</th>
+                <th class="text-center">{LANG.check_in}</th>
+                <th class="text-center">{LANG.check_out}</th>
+                <th class="text-center">{LANG.total_price}</th>
+                <th class="text-center">{LANG.status}</th>
+                <th class="text-center">{LANG.func}</th>
             </tr>
         </thead>
         <tbody>
@@ -45,8 +45,8 @@
                 <td class="text-center">{BOOKING.status_label}</td>
                 <td class="text-center">
                    <!-- BEGIN: pending_action -->
-                   <a href="{BOOKING.confirm_url}" class="btn btn-success">Xác nhận</a>
-                   <a href="{BOOKING.cancel_url}" class="btn btn-danger">Hủy</a>
+                   <a href="{BOOKING.confirm_url}" class="btn btn-success">{LANG.btn_submit}</a>
+                   <a href="{BOOKING.cancel_url}" class="btn btn-danger">{LANG.btn_cancel}</a>
                    <!-- END: pending_action -->
                    
                    <!-- BEGIN: no_action -->

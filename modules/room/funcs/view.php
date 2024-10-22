@@ -13,7 +13,7 @@ if ($id <= 0) {
 $sql = "SELECT r.*, 
         GROUP_CONCAT(DISTINCT f.name SEPARATOR ', ') AS features, 
         GROUP_CONCAT(DISTINCT fa.name SEPARATOR ', ') AS facilities,
-        GROUP_CONCAT(i.image ORDER BY i.active DESC, i.id ASC) AS room_images
+        GROUP_CONCAT(DISTINCT i.image SEPARATOR ',') AS room_images
         FROM nv4_vi_room_rooms r
         LEFT JOIN nv4_vi_room_roomxfeatures rf ON r.id = rf.room_id
         LEFT JOIN nv4_vi_room_features f ON rf.features_id = f.id
@@ -47,14 +47,12 @@ $xtpl->assign('LANG', $lang_module);
 $room['price'] = number_format($room['price'], 0, ',', '.') . '₫';
 $room['features'] = !empty($room['features']) ? explode(',', $room['features']) : [];
 $room['facilities'] = !empty($room['facilities']) ? explode(',', $room['facilities']) : [];
-$room_images = !empty($room['room_images']) ? explode(',', $room['room_images']) : [];
+$room['room_images'] = !empty($room['room_images']) ? explode(',', $room['room_images']) : [];
 $room['booking_url'] = NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=booking';
 
 // Gán ảnh vào carousel
-foreach ($room_images as $index => $image) {
-    $isActive = $index === 0 ? 'active' : ''; // Ảnh đầu tiên sẽ có class active
+foreach ($room['room_images'] as $image) {
     $xtpl->assign('IMAGE', NV_BASE_SITEURL . 'uploads/room/images/' . $image);
-    $xtpl->assign('ACTIVE', $isActive);
     $xtpl->parse('main.carousel');
 }
 

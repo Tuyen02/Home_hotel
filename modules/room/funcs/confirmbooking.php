@@ -8,21 +8,21 @@ $checkout = $nv_Request->get_title('checkout', 'get, post', '');
 $adult = $nv_Request->get_int('adult', 'get, post', 0);
 $children = $nv_Request->get_int('children', 'get, post', 0);
 $selected_rooms = $nv_Request->get_title('selected_rooms', 'get, post', '');
-$selected_rooms = trim($selected_rooms ,characters: ',');
+$selected_rooms = trim($selected_rooms, characters: ',');
 
 $room_ids = array_filter(array_map('intval', explode(',', $selected_rooms)));
 $room_counts = array_count_values($room_ids);
 $message = 0;
 
 
-if ($nv_Request->isset_request("submit", "post, get")) {    
+if ($nv_Request->isset_request("submit", "post, get")) {
     $isFormSubmitted = true;
 
     // Lấy thông tin từ form
     $fullname = $nv_Request->get_title('fullname', 'post', '', 1);
     $email = $nv_Request->get_title('email', 'post', '', 1);
     $phone = $nv_Request->get_title('phone', 'post', '', 1);
-    $address = $nv_Request->get_title('address', 'post', '', 1); 
+    $address = $nv_Request->get_title('address', 'post', '', 1);
     $payment_method = $nv_Request->get_int('payment_method', 'post', 0);
 
     if (preg_match('/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/', $checkin, $m)) {
@@ -30,7 +30,7 @@ if ($nv_Request->isset_request("submit", "post, get")) {
     } else {
         $error = 'Thông tin ngày nhận phòng không hợp lệ.';
     }
-    
+
     if (preg_match('/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/', $checkout, $m)) {
         $checkout_time = mktime(0, 0, 0, $m[2], $m[1], $m[3]);
         if ($checkout_time <= $checkin_time) {
@@ -52,7 +52,7 @@ if ($nv_Request->isset_request("submit", "post, get")) {
         $booking_status = 'pending'; // Trạng thái đặt phòng
         $datentime = time();
         $userid = 0;
-        
+
         // Gán giá trị cho các tham số
         $stmt->bindParam(':booking_id', $booking_id, PDO::PARAM_INT);
         $stmt->bindParam(':userid', $userid, PDO::PARAM_INT); // Nếu không có userid, có thể bỏ qua
@@ -61,7 +61,7 @@ if ($nv_Request->isset_request("submit", "post, get")) {
         $stmt->bindParam(':booking_status', $booking_status, PDO::PARAM_STR);
         $stmt->bindParam(':rate_review', $rate_review, PDO::PARAM_STR); // Cần xác định nếu có
         $stmt->bindParam(':datentime', $datentime, PDO::PARAM_INT);
-        
+
         if ($stmt->execute()) {
             $booking_id = $db->lastInsertId(); // Lấy ID đặt phòng mới tạo
         } else {
@@ -72,14 +72,14 @@ if ($nv_Request->isset_request("submit", "post, get")) {
         $stmt = $db->prepare("INSERT INTO nv4_vi_room_booking_details 
             (id, booking_id, room_id, room_name, price, quanlity, total_pay, user_name, phonenum, address) 
             VALUES (:id, :booking_id, :room_id, :room_name, :price, :quanlity, :total_pay, :user_name, :phonenum, :address)");
-        
+
         foreach ($room_counts as $room_id => $quanlity) {
             // Lấy thông tin phòng
-            $room = $db->query("SELECT name, price FROM " . NV_PREFIXLANG . "_" . $module_data . "_rooms WHERE id = ". $room_id)->fetch();
+            $room = $db->query("SELECT name, price FROM " . NV_PREFIXLANG . "_" . $module_data . "_rooms WHERE id = " . $room_id)->fetch();
             $room_name = $room['name'];
             $price = $room['price'];
             $total_pay = $price * $quanlity; // Hoặc tính toán tổng tiền nếu có số lượng phòng
-            
+
             // Gán giá trị cho các tham số
             $id = null; // Cần xác định nếu có
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -98,24 +98,25 @@ if ($nv_Request->isset_request("submit", "post, get")) {
         $db->commit();
         // Nếu thành công
         // chuuyen huowng
-        nv_redirect_location(nv_url_rewrite(NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=processbooking&booking_id='.$booking_id, true));
+        nv_redirect_location(nv_url_rewrite(NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=processbooking&booking_id=' . $booking_id, true));
 
         $message = "Gửi thông tin đăng ký thành công!";
     } catch (PDOException $e) {
         $db->rollBack();
         // Nếu có lỗi
-        print_r($e);die;
+        print_r($e);
+        die;
     }
 }
 
 $rooms_info = [];
 if (!empty($room_ids)) {
     $room_ids_imploded = implode(',', $room_ids);
-    
+
     if (empty($room_ids_imploded) || !preg_match('/^\d+(,\d+)*$/', $room_ids_imploded)) {
         die('Invalid room IDs');
     }
-    
+
     $sql = "SELECT r.*, 
                 GROUP_CONCAT(DISTINCT f.name ORDER BY f.name ASC SEPARATOR ', ') AS features, 
                 GROUP_CONCAT(DISTINCT fac.name ORDER BY fac.name ASC SEPARATOR ', ') AS facilities,
@@ -132,11 +133,11 @@ if (!empty($room_ids)) {
 
     try {
         $result = $db->query($sql);
-        
+
         while ($row = $result->fetch()) {
             $price_formatted = number_format($row['price'], 0, ',', '.') . '₫';
             $selected_count = isset($room_counts[$row['id']]) ? $room_counts[$row['id']] : 0; // Lấy số lượng đã chọn
-            
+
             $rooms_info[] = [
                 'id' => $row['id'],
                 'name' => $row['name'],
@@ -156,14 +157,14 @@ if (!empty($room_ids)) {
 
 // Đưa dữ liệu vào template
 $xtpl = new XTemplate('confirmbooking.tpl', NV_ROOTDIR . '/themes/' . $module_info['template'] . '/modules/room');
-$xtpl ->assign('LANG',$lang_module);
-$xtpl ->assign('NV_LANG_VARIABLE',NV_LANG_VARIABLE);
-$xtpl ->assign('NV_LANG_DATA',NV_LANG_DATA);
-$xtpl ->assign('NV_BASE_SITEURL',NV_BASE_SITEURL);
-$xtpl ->assign('NV_NAME_VARIABLE',NV_NAME_VARIABLE);
-$xtpl ->assign('NV_OP_VARIABLE',NV_OP_VARIABLE);
-$xtpl ->assign('MODULE_NAME',$module_name);
-$xtpl ->assign('OP',$op);
+$xtpl->assign('LANG', $lang_module);
+$xtpl->assign('NV_LANG_VARIABLE', NV_LANG_VARIABLE);
+$xtpl->assign('NV_LANG_DATA', NV_LANG_DATA);
+$xtpl->assign('NV_BASE_SITEURL', NV_BASE_SITEURL);
+$xtpl->assign('NV_NAME_VARIABLE', NV_NAME_VARIABLE);
+$xtpl->assign('NV_OP_VARIABLE', NV_OP_VARIABLE);
+$xtpl->assign('MODULE_NAME', $module_name);
+$xtpl->assign('OP', $op);
 
 $xtpl->assign('CHECKIN', nv_date('d/m/Y', strtotime($checkin)));
 $xtpl->assign('CHECKOUT', nv_date('d/m/Y', strtotime($checkout)));

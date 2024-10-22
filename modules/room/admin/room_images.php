@@ -90,7 +90,7 @@ if ($nv_Request->isset_request("submit", "post")) {
         $stmt->bindParam("image", $post['image']);
         $stmt->bindParam("room_id", $post['room_id']);
         $stmt->bindParam("active", $post['active']);
-        
+
         $exe = $stmt->execute();
         if ($exe) {
             if ($post['id'] > 0) {
@@ -129,15 +129,15 @@ if (!empty($array_images)) {
     foreach ($array_images as $index => $image) {
         $image['stt'] = $index + 1;
         $image['url'] = NV_BASE_SITEURL . 'uploads/room/images/' . $image['image']; // Tạo URL đầy đủ để hiển thị ảnh
-        $image['url_delete'] = NV_BASE_ADMINURL . 'index.php?' 
-            . NV_LANG_VARIABLE . '=' . NV_LANG_DATA 
-            . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name 
-            . '&amp;' . NV_OP_VARIABLE . '=room_images' 
-            . '&amp;room_id=' . $room_id 
-            . '&amp;id=' . $image['id'] 
-            . '&amp;action=delete' 
+        $image['url_delete'] = NV_BASE_ADMINURL . 'index.php?'
+            . NV_LANG_VARIABLE . '=' . NV_LANG_DATA
+            . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name
+            . '&amp;' . NV_OP_VARIABLE . '=room_images'
+            . '&amp;room_id=' . $room_id
+            . '&amp;id=' . $image['id']
+            . '&amp;action=delete'
             . '&amp;checksess=' . md5($image['id'] . NV_CHECK_SESSION);
-        $image['active'] = $image['active'] == 1 ? 'checked="checked"':'';
+        $image['active'] = $image['active'] == 1 ? 'checked="checked"' : '';
         $xtpl->assign('IMAGE', $image);
         $xtpl->parse('main.image');
     }

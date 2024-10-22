@@ -36,7 +36,7 @@ if (!nv_function_exists('nv_block_carousel')) {
         while ($row = $result->fetch()) {
             $xtpl->assign('ROW', 
                 ['image' => $row['image']]);
-            $xtpl->parse('main.carousel'); // Áp dụng block con `carousel`
+            $xtpl->parse('main.carousel');
         }
         $xtpl->parse('main');
         return $xtpl->text('main');

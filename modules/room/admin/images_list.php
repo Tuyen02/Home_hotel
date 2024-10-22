@@ -30,14 +30,14 @@ if ($nv_Request->isset_request("action", "post,get")) {
         }
     }
 }
-if($nv_Request->isset_request("change_active","post,get")){
-    $id = $nv_Request ->get_int("id","post,get",0);
-    $sql = "SELECT id, active FROM nv4_vi_room_images WHERE id=" .$id;
-    $result = $db ->query($sql);
-    if($row = $result ->fetch()){
+if ($nv_Request->isset_request("change_active", "post,get")) {
+    $id = $nv_Request->get_int("id", "post,get", 0);
+    $sql = "SELECT id, active FROM nv4_vi_room_images WHERE id=" . $id;
+    $result = $db->query($sql);
+    if ($row = $result->fetch()) {
         $active = $row['active'] == 1 ? 0 : 1;
-        $exe = $db ->query("UPDATE nv4_vi_room_images SET active =". $active . " WHERE id=" .$id);
-        if($exe){
+        $exe = $db->query("UPDATE nv4_vi_room_images SET active =" . $active . " WHERE id=" . $id);
+        if ($exe) {
             die("OK");
         }
     }
