@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="form-group row text-center ">
-            <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">{LANG.save}</button>
+            <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">{LANG.btn_save}</button>
         </div>
 </div>
 </form>

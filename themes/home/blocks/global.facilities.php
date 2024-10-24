@@ -64,7 +64,8 @@ if (!nv_function_exists('nv_block_facilities')) {
         $xtpl = new XTemplate('global.facilities.tpl', NV_ROOTDIR . '/themes/' . $block_theme . '/blocks');
         $xtpl->assign('NV_BASE_SITEURL', NV_BASE_SITEURL);
         $xtpl->assign('BLOCK_THEME', $block_theme);
-
+        $xtpl->assign('LANG', $lang_module);
+        
         // Kiểm tra config_id hợp lệ
         if (isset($block_config['config_id']) && $block_config['config_id'] > 0) {
             $stmt = $db->prepare('SELECT * FROM `nv4_vi_room_facilities` WHERE id = :config_id');

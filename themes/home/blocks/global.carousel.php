@@ -31,7 +31,7 @@ if (!nv_function_exists('nv_block_carousel')) {
         $xtpl->assign('NV_BASE_SITEURL', NV_BASE_SITEURL);
         $xtpl->assign('BLOCK_THEME', $block_theme);
         $xtpl->assign('SELECT_LANGUAGE', $lang_global['langsite']);
-
+        $xtpl->assign('LANG', $lang_module);
         $images = [];
         while ($row = $result->fetch()) {
             $xtpl->assign('ROW', 

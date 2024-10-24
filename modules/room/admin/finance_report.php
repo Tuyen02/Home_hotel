@@ -35,6 +35,7 @@ try {
     $xtpl->assign('MONTHS', json_encode($months));
     $xtpl->assign('TOTALS', json_encode($totals));
     $xtpl->assign('CURRENT_YEAR', $current_year);
+    $xtpl->assign('LANG', $lang_module);
 
     // Lấy danh sách các năm có booking trong cơ sở dữ liệu
     $years_sql = "SELECT DISTINCT YEAR(FROM_UNIXTIME(check_in)) AS year FROM " . NV_PREFIXLANG . "_room_booking WHERE booking_status = 1 ORDER BY year DESC";

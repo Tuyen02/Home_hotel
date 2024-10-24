@@ -65,6 +65,7 @@ if (!nv_function_exists('nv_block_summary')) {
             $xtpl->assign('SELECTED_ROOMS', implode(',', $selected_rooms));
             $xtpl->assign('CONFIRM_URL', $confirm_url);
             $xtpl->parse('main.has_dates');
+            $xtpl->assign('LANG', $lang_module);
         } else {
             $xtpl->parse('main.no_dates');
         }

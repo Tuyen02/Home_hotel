@@ -15,7 +15,6 @@ if ($room_id <= 0) {
 
 // Lấy thông tin phòng
 $room_id = $nv_Request->get_int('room_id', 'get', 0);
-echo "Room ID: " . $room_id; // Để kiểm tra giá trị room_id
 $room = $db->query("SELECT * FROM " . NV_PREFIXLANG . "_room_rooms WHERE id=" . $room_id)->fetch();
 if (empty($room)) {
     echo 'Room not found'; // Để kiểm tra nếu phòng không được tìm thấy
@@ -116,6 +115,7 @@ $array_images = $db->query("SELECT * FROM " . NV_PREFIXLANG . "_room_images WHER
 
 $xtpl = new XTemplate('room_images.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/modules/' . $module_file);
 $xtpl->assign('ROOM', $room);
+$xtpl->assign('LANG', $lang_module);
 $xtpl->assign('NV_BASE_ADMINURL', NV_BASE_ADMINURL);
 $xtpl->assign('NV_NAME_VARIABLE', NV_NAME_VARIABLE);
 $xtpl->assign('NV_OP_VARIABLE', NV_OP_VARIABLE);

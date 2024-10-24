@@ -96,7 +96,7 @@ if (!nv_function_exists('nv_block_room_by_id')) {
                 $room['facilities'] = explode(',', $room['facilities']);
                 $room['booking_url'] = NV_BASE_SITEURL . 'vi/room/booking';
                 $room['view_url'] = NV_BASE_SITEURL . NV_LANG_DATA . '/room/view?id=' . $room['room_id'];
-
+                $xtpl->assign('LANG', $lang_module);
                 $xtpl->assign('ROOM', $room);
 
                 // Lặp qua danh sách tiện nghi và đặc điểm để hiển thị

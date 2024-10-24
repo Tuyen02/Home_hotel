@@ -1,7 +1,6 @@
 <!-- BEGIN: main -->
 <div class="container">
     <h1>Quản lý ảnh cho phòng {ROOM.name}</h1>
-    
     <!-- BEGIN: error -->
     <!-- Error block for displaying error messages -->
     {ERROR}
@@ -23,15 +22,15 @@
         </div>
     </form>
     <hr class="border border-primary border-3 opacity-75">
-    
-    <!-- Table to display existing images -->
+</div>
+<div class="container">
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
                     <th class="text-nowrap text-center">{LANG.stt}</th>
                     <th class="text-nowrap text-center">{LANG.img}</th>
-                    <th class="text-nowrap text-center">{LANG.status}</th> -->
+                    <th class="text-nowrap text-center">{LANG.status}</th>
                     <th class="text-nowrap text-center">{LANG.func}</th>
                 </tr>
             </thead>
@@ -77,5 +76,4 @@
           });
       });
 </script>
-    
 <!-- END: main -->

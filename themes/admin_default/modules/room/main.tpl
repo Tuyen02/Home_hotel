@@ -34,9 +34,9 @@
                     <td class="text-center">{ROW.quantity}</td>
                     <td class="text-center"><input type="checkbox" name="active" {ROW.active} onchange="nv_change_active({ROW.id})"></td>
                     <td class="text-center w-50">
-                        <a href="{ROW.url_edit}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>{LANG.btn_edit}</a>
-                        <a href="{ROW.url_image}" class="btn btn-primary btn-sm"><i class="fa fa-picture-o"></i></i>{LANG.img}</a>
-                        <a href="{ROW.url_delete}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash-o"></i></i>{LANG.btn_delete}s</a>
+                        <a href="{ROW.url_edit}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i> {LANG.btn_edit}</a>
+                        <a href="{ROW.url_image}" class="btn btn-primary btn-sm"><i class="fa fa-picture-o"></i></i> {LANG.img}</a>
+                        <a href="{ROW.url_delete}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash-o"></i></i> {LANG.btn_delete}</a>
                     </td>
                 </tr>
             <!-- END: loop -->

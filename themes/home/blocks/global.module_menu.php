@@ -69,7 +69,7 @@ if (!nv_function_exists('nv_module_menu')) {
                 $xtpl->parse('main.loop');
             }
         }
-
+        $xtpl->assign('LANG', $lang_module);
         $xtpl->assign('MOD', $mod);
         $xtpl->parse('main');
 

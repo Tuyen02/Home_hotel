@@ -24,7 +24,8 @@ if (!nv_function_exists('nv_block_filter')) {
 
         // Create the XTemplate instance
         $xtpl = new XTemplate('global.filter.tpl', NV_ROOTDIR . '/themes/' . $global_config['module_theme'] . '/blocks');
-
+        $xtpl->assign('LANG', $lang_module);
+        
         // Assigning variables to template
         $xtpl->assign('FILTER_URL', $filter_url);
         $xtpl->assign('CHECKIN', $checkin);

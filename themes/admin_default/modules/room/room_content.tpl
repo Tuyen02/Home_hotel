@@ -32,7 +32,7 @@
           <input type="number" min="1" name="children" class="form-control shadow-none" required value="{POST.children}">
       </div>
       <div class="col-24 mb-3">
-          <label class="form-label fw-bold"><strong>{LANG.features}</strong></label>
+          <label class="form-label fw-bold"><strong>{LANG.fe}</strong></label>
           <div class="row">
               <!-- BEGIN: features -->
               <div class="col-md-3 mb-1">
@@ -45,7 +45,7 @@
           </div>
       </div>
       <div class="col-24 mb-3">
-          <label class="form-label fw-bold"><strong>{LANG.facilities}</strong></label>
+          <label class="form-label fw-bold"><strong>{LANG.fac}</strong></label>
           <div class="row">
               <!-- BEGIN: facilities -->
               <div class="col-md-3 mb-1">
@@ -64,7 +64,7 @@
   </div>
   <div><br/></div>
   <div class="form-group row text-center">
-    <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">{LANG.save}</button>
+    <button type="submit" class="btn btn-primary" value="1" name="submit" value="{LANG.save}">{LANG.btn_save}</button>
   </div>
 </form>
 <!-- END: main -->

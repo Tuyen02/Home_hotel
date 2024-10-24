@@ -82,6 +82,7 @@ if (!nv_function_exists('nv_menu_theme_social')) {
         $xtpl->assign('LANG', $lang_global);
         $xtpl->assign('BLOCK_THEME', $block_theme);
         $xtpl->assign('DATA', $block_config);
+        $xtpl->assign('LANG', $lang_module);
         if (!empty($block_config['facebook'])) {
             $xtpl->parse('main.facebook');
         }
