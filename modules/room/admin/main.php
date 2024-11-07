@@ -43,7 +43,7 @@ if ($nv_Request->isset_request("action", "post,get")) {
 }
 
 
-//btn active
+//btn thay doi active
 if ($nv_Request->isset_request("change_active", "post,get")) {
     $id = $nv_Request->get_int("id", "post,get", 0);
     $sql = "SELECT id, active FROM nv4_vi_room_rooms WHERE id=" . $id;
